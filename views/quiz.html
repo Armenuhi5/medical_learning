@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Medical Quiz</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>Medical Quiz</h1>
+    <p id="quiz-level-desc"></p>
+  </header>
+
+  <div class="main-container card fade-in">
+    <div id="quiz-container">
+
+    </div>
+
+    <a href="/" class="btn btn-secondary" style="margin-top: 2rem;">Back to Home</a>
+  </div>
+
+  <footer>
+    <p>© 2025 Medical Learning Platform. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const level = params.get("level");
+
+    const desc = {
+      easy: "You chose the Easy Quiz. Let's begin with some basic questions!",
+      medium: "You selected the Medium Quiz. Ready for a challenge?",
+      hard: "You selected the Hard Quiz. Time to show your expertise!"
+    };
+
+    document.getElementById("quiz-level-desc").textContent = desc[level] || "Select a valid quiz level.";
+
+    const questions = {
+      easy: [
+        { q: "What is the largest organ in the human body?", a: "Skin" },
+        { q: "How many chambers does the heart have?", a: "4" }
+      ],
+      medium: [
+        { q: "What part of the brain controls breathing?", a: "Medulla oblongata" },
+        { q: "What is the normal range for adult blood pressure?", a: "120/80 mmHg" }
+      ],
+      hard: [
+        { q: "What enzyme initiates carbohydrate digestion in the mouth?", a: "Salivary amylase" },
+        { q: "Name the hormone produced by the pineal gland.", a: "Melatonin" }
+      ]
+    };
+
+    const quizContainer = document.getElementById("quiz-container");
+    if (questions[level]) {
+      questions[level].forEach((item, index) => {
+        const qDiv = document.createElement("div");
+        qDiv.className = "quiz-question";
+        qDiv.innerHTML = `<p><strong>Q${index + 1}:</strong> ${item.q}</p><p><em>Answer:</em> ${item.a}</p>`;
+        quizContainer.appendChild(qDiv);
+      });
+    }
+  </script>
+  <script src="/script.js"></script>
+</body>
+</html>

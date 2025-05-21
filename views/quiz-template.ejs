@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= topic %> Quiz - <%= level %> Level</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1><%= topic.charAt(0).toUpperCase() + topic.slice(1) %> Quiz</h1>
+    <p>Difficulty: <strong><%= level.toUpperCase() %></strong></p>
+  </header>
+
+  <div class="main-container card">
+    <p>This is a placeholder for <%= level %> questions on the <%= topic %> topic.</p>
+    <a href="/quizzes" class="btn btn-secondary" style="margin-top: 2rem;"><i class="fas fa-arrow-left"></i> Back to Quizzes</a>
+  </div>
+</body>
+</html>

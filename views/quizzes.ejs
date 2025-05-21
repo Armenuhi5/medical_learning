@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Medical Quizzes</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>Medical Quizzes</h1>
+    <p>Select a difficulty level to start a quiz</p>
+  </header>
+
+  <div class="main-container card fade-in">
+    <div class="quiz-section-grid">
+      <div class="quiz-card easy">
+        <h2>Easy</h2>
+        <p>Basic level questions to get you started.</p>
+        <a href="/quiz?topic=general&level=easy" class="btn">Start Easy Quiz</a>
+      </div>
+
+      <div class="quiz-card medium">
+        <h2>Medium</h2>
+        <p>Intermediate challenges to test your knowledge.</p>
+        <a href="/quiz?topic=general&level=medium" class="btn">Start Medium Quiz</a>
+      </div>
+
+      <div class="quiz-card hard">
+        <h2>Hard</h2>
+        <p>Advanced questions for experienced learners.</p>
+        <a href="/quiz?topic=general&level=hard" class="btn">Start Hard Quiz</a>
+      </div>
+    </div>
+
+    <a href="/" class="btn btn-secondary" style="margin-top: 2rem;"><i class="fas fa-home"></i> Back to Home</a>
+  </div>
+
+  <footer>
+    <p>© 2025 Medical Learning Platform. All rights reserved.</p>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
